@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>ATHUM — L'Écosystème Gaming Ultime</title>
-    <a href="ATHUM%200.1.0.exe" class="btn btn-primary" download>Télécharger ATHUM (Windows)</a>
+    <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;500;700&family=Inter:wght@400;600&display=swap" rel="stylesheet">
     <style>
         :root {
             --primary: #9d4edd;
@@ -28,7 +28,6 @@
 
         h1, h2, .logo { font-family: 'Space Grotesk', sans-serif; }
 
-        /* Navigation */
         nav {
             padding: 2rem 10%;
             display: flex;
@@ -42,7 +41,6 @@
 
         .logo { font-size: 1.8rem; font-weight: 700; letter-spacing: 2px; color: var(--primary); }
 
-        /* Hero Section */
         .hero {
             height: 100vh;
             display: flex;
@@ -61,11 +59,13 @@
             font-size: 0.9rem;
             margin-bottom: 20px;
             color: var(--primary);
+            text-transform: uppercase;
+            letter-spacing: 1px;
         }
 
         .hero h1 {
-            font-size: clamp(3rem, 10vw, 6rem);
-            line-height: 1;
+            font-size: clamp(2.5rem, 8vw, 5rem);
+            line-height: 1.1;
             margin-bottom: 20px;
             background: linear-gradient(to bottom, #fff, #9d4edd);
             -webkit-background-clip: text;
@@ -73,39 +73,41 @@
         }
 
         .hero p {
-            max-width: 600px;
+            max-width: 800px;
             font-size: 1.2rem;
             color: rgba(255,255,255,0.7);
             margin-bottom: 40px;
+            line-height: 1.6;
         }
 
-        /* Boutons */
         .btn {
-            padding: 16px 40px;
-            border-radius: 12px;
+            padding: 18px 45px;
+            border-radius: 14px;
             text-decoration: none;
-            font-weight: 600;
+            font-weight: 700;
             transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
             display: inline-block;
+            font-size: 1.1rem;
         }
 
         .btn-primary {
             background: var(--primary);
             color: white;
             box-shadow: 0 10px 20px rgba(157, 78, 221, 0.3);
+            border: none;
+            cursor: pointer;
         }
 
         .btn-primary:hover {
-            transform: translateY(-5px);
+            transform: translateY(-5px) scale(1.02);
             box-shadow: 0 15px 30px rgba(157, 78, 221, 0.5);
             background: #b062ff;
         }
 
-        /* Analyse / Features Box */
         .features {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 20px;
+            gap: 25px;
             padding: 100px 10%;
         }
 
@@ -115,44 +117,55 @@
             padding: 40px;
             border-radius: 24px;
             backdrop-filter: blur(20px);
-            transition: border 0.3s;
+            transition: all 0.4s;
         }
 
-        .card:hover { border-color: var(--primary); }
+        .card:hover { 
+            border-color: var(--primary);
+            transform: translateY(-10px);
+            background: rgba(255, 255, 255, 0.08);
+        }
 
-        .card h3 { margin-bottom: 15px; color: var(--primary); }
+        .card h3 { margin-bottom: 15px; color: var(--primary); font-size: 1.5rem; }
+        .card p { line-height: 1.5; opacity: 0.8; }
 
-        /* Code Section */
         .code-access {
             text-align: center;
-            padding: 80px 10%;
-            background: rgba(157, 78, 221, 0.03);
+            padding: 100px 10%;
+            background: linear-gradient(to bottom, transparent, rgba(157, 78, 221, 0.05));
         }
 
-        .email-link { color: var(--accent); text-decoration: none; font-weight: bold; }
+        .email-link { 
+            color: var(--accent); 
+            text-decoration: none; 
+            font-weight: bold;
+            border-bottom: 1px solid transparent;
+            transition: 0.3s;
+        }
+        .email-link:hover { border-bottom-color: var(--accent); }
 
         footer {
-            padding: 40px;
+            padding: 60px;
             text-align: center;
-            font-size: 0.8rem;
-            color: rgba(255,255,255,0.3);
+            font-size: 0.9rem;
+            color: rgba(255,255,255,0.4);
+            border-top: 1px solid var(--border);
         }
 
-        /* Animation Background */
         .glow {
             position: absolute;
-            width: 400px;
-            height: 400px;
+            width: 500px;
+            height: 500px;
             background: var(--primary);
-            filter: blur(150px);
-            opacity: 0.1;
+            filter: blur(180px);
+            opacity: 0.15;
             z-index: -1;
-            animation: float 10s infinite alternate;
+            animation: float 15s infinite alternate ease-in-out;
         }
 
         @keyframes float {
-            from { transform: translate(-20%, -20%); }
-            to { transform: translate(20%, 20%); }
+            0% { transform: translate(-20%, -10%); }
+            100% { transform: translate(30%, 20%); }
         }
     </style>
 </head>
@@ -161,42 +174,47 @@
     
     <nav>
         <div class="logo">ATHUM</div>
-        <div>v0.1.0</div>
+        <div style="font-weight: 500; opacity: 0.6;">v0.1.0</div>
     </nav>
 
     <section class="hero">
-        <div class="badge">Aperçu développeur — v0.1.0</div>
-        <h1>L'Expérience<br>Gaming Réinventée.</h1>
-        <p>Plus qu'une bibliothèque de jeux, ATHUM est le hub social où vos statistiques, vos amis et vos découvertes fusionnent dans une interface futuriste.</p>
-        <a href="ATHUM 0.1.0.exe" class="btn btn-primary" download>Télécharger ATHUM (Windows)</a>
+        <div class="badge">Le futur du Gaming est ici</div>
+        <h1>Discord, en mieux.<br>Le Gaming, sans limites.</h1>
+        <p>Oubliez tout ce que vous savez sur les launchers. ATHUM fusionne vos statistiques, vos amis et une base de données de 300+ jeux dans une interface révolutionnaire.</p>
+        
+        <a href="ATHUM%200.1.0.exe" class="btn btn-primary" download>Installer ATHUM gratuitement</a>
+        
+        <p style="margin-top: 20px; font-size: 0.9rem; opacity: 0.5;">Compatible Windows 10/11 • 108 Mo</p>
     </section>
 
     <section class="features">
         <div class="card">
-            <h3>Bibliothèque Massive</h3>
-            <p>Accédez à une base de données de plus de 300 jeux avec métadonnées complètes, descriptions et liens vers vos plateformes préférées.</p>
+            <h3>Le Discord Réinventé</h3>
+            <p>Une expérience sociale fluide où les stats des joueurs sont au cœur de l'action. Suivez vos amis et comparez vos exploits en temps réel.</p>
         </div>
         <div class="card">
-            <h3>Interface Glassmorphism</h3>
-            <p>Un design "Neon Purple" ultra-fluide avec des effets de transparence et des animations inspirées du luxe numérique.</p>
+            <h3>Promos Automatiques</h3>
+            <p>Ne cherchez plus jamais le meilleur prix. Notre IA scanne le web et vous propose les plus grosses promos du moment sans que vous n'ayez rien à faire.</p>
         </div>
         <div class="card">
-            <h3>Social-First</h3>
-            <p>Gérez votre liste d'amis, suivez les activités en temps réel et partagez vos jeux favoris en un clic.</p>
+            <h3>Bibliothèque Ultime</h3>
+            <p>Plus de 300 titres référencés avec métadonnées complètes, visuels HD et accès direct. Tout votre univers gaming centralisé.</p>
         </div>
     </section>
 
     <section class="code-access">
-        <h2>Vous êtes développeur ?</h2>
-        <p style="margin-top: 20px; opacity: 0.8;">Ceci est une version de démonstration. L'application finale est en cours de déploiement.</p>
-        <p style="margin-top: 10px;">
-            Le code source complet est disponible sur candidature pour les collaborateurs. <br>Contactez-moi sur : 
+        <h2>Rejoignez l'aventure</h2>
+        <p style="margin: 25px 0; opacity: 0.8; max-width: 600px; margin-left: auto; margin-right: auto;">
+            ATHUM est actuellement en phase de lancement. Pour les passionnés et les développeurs, le code source est disponible sur candidature.
+        </p>
+        <p>
+            Contactez le créateur : 
             <a href="mailto:lgarciabourhis@icloud.com" class="email-link">lgarciabourhis@icloud.com</a>
         </p>
     </section>
 
     <footer>
-        &copy; 2026 ATHUM Project — Tous droits réservés.
+        &copy; 2026 ATHUM Project — Created by Léo Garcia Bourhis.
     </footer>
 </body>
 </html>
